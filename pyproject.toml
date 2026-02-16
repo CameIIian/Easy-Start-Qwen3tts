@@ -1,0 +1,23 @@
+[project]
+name = "easy-start-qwen3tts"
+version = "0.1.0"
+description = "Minimal uv setup to run Qwen3-TTS"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.4",
+  "transformers>=4.55.0",
+  "accelerate>=0.34",
+  "soundfile>=0.12",
+  "qwen-omni-utils>=0.0.6",
+]
+
+[project.scripts]
+qwen3tts = "easy_start_qwen3tts.main:main"
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
