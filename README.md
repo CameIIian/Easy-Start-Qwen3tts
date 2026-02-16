@@ -10,8 +10,8 @@
 
 ## セットアップ
 ```sh
-pyenv install 3.12.11
-pyenv local 3.12.11
+pyenv install 3.12.10
+pyenv local 3.12.10
 pip install -r requirements.txt
 ```
 
