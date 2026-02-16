@@ -1,39 +1,28 @@
 # Easy-Start-Qwen3tts
 
-`uv` 環境で `Qwen/Qwen3-TTS-12Hz-1.7B-Base` をすぐに試すための最小構成です。
+`uv` 環境で `Qwen/Qwen3-TTS-12Hz-1.7B-Base` を実行するためのプロジェクト。
+
+## TO-DO
+[x] Qwen3ttsを動作させる\
+[ ] FlashAttensionを追加する
 
 ## 前提
-
-- Python 3.10+
 - `uv`（https://docs.astral.sh/uv/）
-- （推奨）CUDA が使える GPU
+- Nvidiaドライバ / nvcc (Nvidia環境のみ)
+- sox
 
 ## セットアップ
-
-```bash
+```sh
 uv sync
 ```
 
 ## 実行例
-
-```bash
-uv run qwen3tts "こんにちは。Qwen3-TTSの音声テストです。" -o output.wav
+起動チェック
+```sh
+uv run src/check.py
 ```
 
-オプション例:
-
-```bash
-uv run qwen3tts "This is an English sample." --voice Chelsie --max-new-tokens 2048 -o sample.wav
+推論
+```sh
+uv run src/infer.py
 ```
-
-## 主要オプション
-
-- `--model`: 既定値は `Qwen/Qwen3-TTS-12Hz-1.7B-Base`
-- `--voice`: 話者プリセット（既定値: `Chelsie`）
-- `--thinker`: thinker モードを有効化
-- `--max-new-tokens`: 生成トークン上限
-
-## 補足
-
-- 初回実行時にモデルがダウンロードされるため時間がかかります。
-- CPU でも動作しますが非常に遅くなる可能性があります。
